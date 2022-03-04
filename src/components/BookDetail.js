@@ -1,18 +1,31 @@
 import React from 'react';
-import { StyleSheet, Text, Image, Pressable } from 'react-native';
+import { StyleSheet, Text, Image, Pressable, View } from 'react-native';
 import Rating from './Rating';
 
 const BookDetail = ({data, navigation}) => {
     return (
         <Pressable style={styles.bookWrapper} onPress={()=> navigation.navigate('BookInfo')}>
-            <Image source={data.image} style={styles.image} />
             {
                 data.rating != null
-                ? <Rating data={data.rating}/>
-                : null
+                ? (
+                    <>
+                    <View>
+                        <Image source={data.image} style={styles.image} />
+                    </View>
+                    <Rating data={data.rating}/>
+                    <Text style={styles.title}>{data.title}</Text>
+                    <Text style={styles.author}>{data.author}</Text>
+                    </>
+                ):(
+                    <>
+                    <View style={styles.imageBox}>
+                        <Image source={data.image} style={styles.image} />
+                    </View>
+                    <Text style={styles.title}>{data.title}</Text>
+                    <Text style={styles.author}>{data.author}</Text>
+                    </>
+                )
             }
-            <Text style={styles.title}>{data.title}</Text>
-            <Text style={styles.author}>{data.author}</Text>
         </Pressable>
     );
 }
@@ -23,6 +36,13 @@ const styles = StyleSheet.create({
     bookWrapper: {
         flexDirection: 'column',
         marginHorizontal: 8,
+    },
+    imageBox: {
+        shadowColor: '#414144',
+        shadowOffset: {width: 0, height: 16},
+        shadowOpacity: 0.1,
+        shadowRadius: 32,
+        elevation: 10, //Android only
     },
     image:{
         width: 140,
