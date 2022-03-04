@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Image, Pressable } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -22,14 +22,37 @@ const Navigation = () => {
 
 const HomeStackScreen = () => {
     return (
-      <HomeStack.Navigator>
+      <HomeStack.Navigator
+        screenOptions={{
+            headerShadowVisible: false,
+        }}
+      >
         <HomeStack.Screen
-          name="Home"
-          component={HomeScreen}
+            name="HomeScreen"
+            component={HomeScreen}
+            options={{
+                headerTitle: '',
+                headerRight: () => (
+                    <Pressable onPress={() => alert('Search')}>
+                        <Image source={require('../../assets/icons/icon_search.png')} style={styles.navIcon}/>
+                    </Pressable>
+                ),
+                headerLeft: () => (
+                    <Pressable onPress={() => alert('Drawer')}>
+                        <Image source={require('../../assets/icons/icon_menu.png')} style={styles.navIcon}/>
+                    </Pressable>
+                ),
+            }}
         />
         <HomeStack.Screen
-          name="BookInfo"
-          component={BookInfoScreen}
+            name="BookInfo"
+            component={BookInfoScreen}
+            options={{
+                title: '',
+                headerTransparent: true,
+                headerBackTitleVisible: false,
+                // headerLeft: () => {}
+            }}
         />
       </HomeStack.Navigator>
     );
@@ -60,6 +83,7 @@ const TabNavigator = () => {
                 },
                 tabBarActiveTintColor: '#6200EE',
                 tabBarInactiveTintColor: '#666666',
+                headerShown: false
             })}
         >
             <Tab.Screen name="Home" component={HomeStackScreen} />
