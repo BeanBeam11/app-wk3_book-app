@@ -47,12 +47,19 @@ const HomeStackScreen = () => {
         <HomeStack.Screen
             name="BookInfo"
             component={BookInfoScreen}
-            options={{
-                title: '',
-                headerTransparent: true,
-                headerBackTitleVisible: false,
-                // headerLeft: () => {}
-            }}
+            options={({ navigation }) => ({
+                headerTitle: '',
+                headerRight: () => (
+                    <Pressable onPress={() => alert('Bookmark')}>
+                        <Image source={require('../../assets/icons/icon_bookmark.png')} style={styles.navIcon}/>
+                    </Pressable>
+                ),
+                headerLeft: () => (
+                    <Pressable onPress={() => navigation.goBack()}>
+                        <Image source={require('../../assets/icons/icon_back.png')} style={styles.navIcon}/>
+                    </Pressable>
+                ),
+            })}
         />
       </HomeStack.Navigator>
     );
