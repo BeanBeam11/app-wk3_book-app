@@ -16,6 +16,7 @@ const BookList = ({data, navigation}) => {
             keyExtractor={(item, index) => index}
             horizontal={true}
             showsHorizontalScrollIndicator={false}
+            contentContainerStyle={{ paddingHorizontal: 12 }}
         />
     );
 }
