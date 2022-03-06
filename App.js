@@ -1,15 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import Navigation from './src/navigation';
 
 export default function App() {
   return (
-    <SafeAreaProvider>
-      <SafeAreaView style={{flex: 1}}>
-        <Navigation />            
-      </SafeAreaView>  
-    </SafeAreaProvider>
+    <View style={{flex: 1}}>
+      <Navigation />            
+    </View>  
   );
 }
 

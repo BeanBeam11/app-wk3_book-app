@@ -28,6 +28,7 @@ const HomeStackNavigator = () => {
       <Stack.Navigator
         screenOptions={{
             headerShadowVisible: false,
+            title: '',
         }}
       >
         <Stack.Screen
@@ -76,6 +77,7 @@ const WishlistStackNavigator = () => {
         <Stack.Navigator
           screenOptions={{
               headerShadowVisible: false,
+              title: '',
           }}
         >
           <Stack.Screen
@@ -99,6 +101,7 @@ const MyBooksStackNavigator = () => {
         <Stack.Navigator
           screenOptions={{
               headerShadowVisible: false,
+              title: '',
           }}
         >
           <Stack.Screen
@@ -244,7 +247,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         borderBottomWidth: 1,
         borderColor: '#EDEDEF',
-        // paddingTop: 40,
+        paddingTop: 40,
         paddingHorizontal: 16,
         paddingBottom: 16,
     },
