@@ -9,6 +9,8 @@ import HomeScreen from '../screens/HomeScreen';
 import WishlistScreen from '../screens/WishlistScreen';
 import MyBooksScreen from '../screens/MyBooksScreen';
 import BookInfoScreen from '../screens/BookInfoScreen';
+import AccountScreen from '../screens/AccountScreen';
+import SettingScreen from '../screens/SettingScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -192,7 +194,7 @@ const DrawerNavigator = () => {
                     : <Image source={require('../../assets/icons/icon_home.png')} style={styles.navIcon} />
                 )
             }}/>
-            <Drawer.Screen name="WishlistDrawer" component={WishlistScreen} options={{
+            <Drawer.Screen name="WishlistDrawer" component={WishlistStackNavigator} options={{
                 drawerLabel: 'Wishlist',
                 drawerIcon: ({focused}) => (
                     focused
@@ -200,7 +202,7 @@ const DrawerNavigator = () => {
                     : <Image source={require('../../assets/icons/icon_nav_bookmark.png')} style={styles.navIcon} />
                 )
             }}/>
-            <Drawer.Screen name="MyBooksDrawer" component={MyBooksScreen} options={{
+            <Drawer.Screen name="MyBooksDrawer" component={MyBooksStackNavigator} options={{
                 drawerLabel: 'My books',
                 drawerIcon: ({focused}) => (
                     focused
@@ -208,7 +210,7 @@ const DrawerNavigator = () => {
                     : <Image source={require('../../assets/icons/icon_mybook.png')} style={styles.navIcon} />
                 )
             }}/>
-            <Drawer.Screen name="AccountDrawer" component={HomeStackNavigator} options={{
+            <Drawer.Screen name="AccountDrawer" component={AccountScreen} options={{
                 drawerLabel: 'Account',
                 drawerIcon: ({focused}) => (
                     focused
@@ -216,7 +218,7 @@ const DrawerNavigator = () => {
                     : <Image source={require('../../assets/icons/icon_account.png')} style={styles.navIcon} />
                 )
             }}/>
-            <Drawer.Screen name="SettingDrawer" component={HomeStackNavigator} options={{
+            <Drawer.Screen name="SettingDrawer" component={SettingScreen} options={{
                 drawerLabel: 'Setting',
                 drawerIcon: ({focused}) => (
                     focused
