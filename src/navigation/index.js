@@ -135,7 +135,7 @@ const TabNavigator = () => {
                     iconName = focused
                     ? <Image source={require('../../assets/icons/icon_nav_bookmark_actived.png')} style={styles.navIcon} />
                     : <Image source={require('../../assets/icons/icon_nav_bookmark.png')} style={styles.navIcon} />
-                } else if (route.name === 'MyBooks') {
+                } else if (route.name === 'My books') {
                     iconName = focused
                     ? <Image source={require('../../assets/icons/icon_mybook_actived.png')} style={styles.navIcon} />
                     : <Image source={require('../../assets/icons/icon_mybook.png')} style={styles.navIcon} />
@@ -164,7 +164,7 @@ const TabNavigator = () => {
         >
             <Tab.Screen name="Home" component={HomeStackNavigator} />
             <Tab.Screen name="Wishlist" component={WishlistStackNavigator} />
-            <Tab.Screen name="MyBooks" component={MyBooksStackNavigator} />
+            <Tab.Screen name="My books" component={MyBooksStackNavigator} />
       </Tab.Navigator>
     );
 }
