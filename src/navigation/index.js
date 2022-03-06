@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Image, Pressable, View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -23,6 +23,7 @@ const Navigation = () => {
 }
 
 const HomeStackNavigator = () => {
+    const [bookmark, setBookmark] = useState(false);
     return (
       <Stack.Navigator
         screenOptions={{
@@ -52,8 +53,11 @@ const HomeStackNavigator = () => {
             options={({ navigation }) => ({
                 headerTitle: '',
                 headerRight: () => (
-                    <Pressable onPress={() => alert('Bookmark')}>
-                        <Image source={require('../../assets/icons/icon_bookmark.png')} style={styles.navIcon}/>
+                    <Pressable onPress={() => setBookmark(!bookmark)}>
+                        {bookmark
+                            ? <Image source={require('../../assets/icons/icon_bookmark_actived.png')} style={styles.navIcon}/>
+                            : <Image source={require('../../assets/icons/icon_bookmark.png')} style={styles.navIcon}/>
+                        }
                     </Pressable>
                 ),
                 headerLeft: () => (
