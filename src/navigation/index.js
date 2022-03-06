@@ -233,9 +233,9 @@ const CustomDrawerContent = (props) => {
         <DrawerContentScrollView {...props}>
         <View style={styles.drawerHeader}>
             <View style={styles.avatarBox}>
-                <Image source={require('../../assets/book_images/img_book_tbos.png')} style={styles.avatar} resizeMode={'cover'} />
+                <Image source={require('../../assets/icons/avatar.png')} style={styles.avatar} resizeMode={'cover'} />
             </View>
-            <Text style={styles.username}>Username</Text>
+            <Text style={styles.username}>May</Text>
         </View>
         <DrawerItemList {...props} />
         {/* <DrawerItem label="Help" onPress={() => alert('Link to help')} /> */}
