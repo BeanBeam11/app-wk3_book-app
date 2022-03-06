@@ -146,13 +146,20 @@ const TabNavigator = () => {
                 tabBarActiveTintColor: '#6200EE',
                 tabBarInactiveTintColor: '#666666',
                 headerShown: false,
-                tabBarStyle:{
+                tabBarStyle: {
                     shadowColor: '#000',
                     shadowOffset: {width: 0, height: -1},
                     shadowOpacity: 0.2,
                     shadowRadius: 5,
                     elevation: 10, //Android only
                 },
+                tabBarIconStyle: {
+                    marginTop: 11,
+                },
+                tabBarLabelStyle: {
+                    marginTop: 5,
+                    marginBottom: 5,
+                }
             })}
         >
             <Tab.Screen name="Home" component={HomeStackNavigator} />
