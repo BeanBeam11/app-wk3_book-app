@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Image, Pressable, View, Text } from 'react-native';
+import { StyleSheet, Image, Pressable, View, Text, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -37,14 +37,14 @@ const HomeStackNavigator = () => {
             options={({ navigation }) => ({
                 headerTitle: '',
                 headerRight: () => (
-                    <Pressable onPress={() => alert('Search')}>
+                    <TouchableOpacity onPress={() => alert('Search')}>
                         <Image source={require('../../assets/icons/icon_search.png')} style={styles.navIcon}/>
-                    </Pressable>
+                    </TouchableOpacity>
                 ),
                 headerLeft: () => (
-                    <Pressable onPress={() => navigation.toggleDrawer()}>
+                    <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
                         <Image source={require('../../assets/icons/icon_menu.png')} style={styles.navIcon}/>
-                    </Pressable>
+                    </TouchableOpacity>
                 ),
             })}
         />
@@ -54,17 +54,17 @@ const HomeStackNavigator = () => {
             options={({ navigation }) => ({
                 headerTitle: '',
                 headerRight: () => (
-                    <Pressable onPress={() => setBookmark(!bookmark)}>
+                    <TouchableOpacity onPress={() => setBookmark(!bookmark)}>
                         {bookmark
                             ? <Image source={require('../../assets/icons/icon_bookmark_actived.png')} style={styles.navIcon}/>
                             : <Image source={require('../../assets/icons/icon_bookmark.png')} style={styles.navIcon}/>
                         }
-                    </Pressable>
+                    </TouchableOpacity>
                 ),
                 headerLeft: () => (
-                    <Pressable onPress={() => navigation.goBack()}>
+                    <TouchableOpacity onPress={() => navigation.goBack()}>
                         <Image source={require('../../assets/icons/icon_back.png')} style={styles.navIcon}/>
-                    </Pressable>
+                    </TouchableOpacity>
                 ),
             })}
         />
@@ -86,9 +86,9 @@ const WishlistStackNavigator = () => {
               options={({ navigation }) => ({
                 headerTitle: '',
                 headerRight: () => (
-                    <Pressable onPress={() => alert('Search')}>
+                    <TouchableOpacity onPress={() => alert('Search')}>
                         <Image source={require('../../assets/icons/icon_search.png')} style={styles.navIcon}/>
-                    </Pressable>
+                    </TouchableOpacity>
                 ),
               })}
           />
@@ -110,9 +110,9 @@ const MyBooksStackNavigator = () => {
               options={({ navigation }) => ({
                 headerTitle: '',
                 headerRight: () => (
-                    <Pressable onPress={() => alert('Search')}>
+                    <TouchableOpacity onPress={() => alert('Search')}>
                         <Image source={require('../../assets/icons/icon_search.png')} style={styles.navIcon}/>
-                    </Pressable>
+                    </TouchableOpacity>
                 ),
               })}
           />

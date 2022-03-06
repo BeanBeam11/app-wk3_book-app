@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, StyleSheet, View, Image, Pressable, ScrollView } from 'react-native';
+import { Text, StyleSheet, View, Image, Pressable, ScrollView, TouchableOpacity } from 'react-native';
 import Rating from '../components/Rating';
 
 const BookInfoScreen = ({route}) => {
@@ -29,9 +29,9 @@ const BookInfoScreen = ({route}) => {
                     )
                 }
                 <Text style={styles.description}>{description}</Text>
-                <Pressable style={styles.btn}>
+                <TouchableOpacity style={styles.btn}>
                     <Text style={styles.btnText}>BUY NOW FOR ${price}</Text>
-                </Pressable>
+                </TouchableOpacity>
             </ScrollView>
         </View>
     );
