@@ -18,7 +18,7 @@ const BookInfoScreen = ({route}) => {
                     <View style={styles.rating}>
                         <Rating data={rating}/>
                         <Text style={styles.score}>{rating}.0</Text>
-                        <Text style={[styles.score, {color: '#666666'}]}> / 5.0</Text>
+                        <Text style={styles.scoreTotal}> / 5.0</Text>
                     </View>
                 ):(
                     null
@@ -74,6 +74,14 @@ const styles = StyleSheet.create({
     },
     score: {
         color: '#131313',
+        fontWeight: '400',
+        fontSize: 14,
+        lineHeight: 16,
+        letterSpacing: 0.012,
+        marginLeft: 4,
+    },
+    scoreTotal: {
+        color: '#666666',
         fontWeight: '400',
         fontSize: 14,
         lineHeight: 16,
